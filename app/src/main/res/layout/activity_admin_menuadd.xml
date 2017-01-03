@@ -82,10 +82,9 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Mohd Akmal"
+        android:text="Ice Lemon Tea"
         android:ems="12"
-        android:textSize="15sp"
+        android:textSize="14sp"
         android:minWidth="0dip"
         android:minHeight="0dip"
         android:id="@+id/txtMenuName"
@@ -93,5 +92,32 @@
         android:layout_alignBottom="@+id/lblMenuName"
         android:layout_toRightOf="@+id/lblMenuStatus"
         android:layout_toEndOf="@+id/lblMenuStatus" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Out Of Stock"
+        android:ems="12"
+        android:textSize="14sp"
+        android:minWidth="0dip"
+        android:minHeight="0dip"
+        android:id="@+id/txtMenuStatus"
+        android:layout_alignBaseline="@+id/lblMenuStatus"
+        android:layout_alignBottom="@+id/lblMenuStatus"
+        android:layout_toRightOf="@+id/lblMenuStatus"
+        android:layout_toEndOf="@+id/lblMenuStatus" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RM18"
+        android:ems="12"
+        android:textSize="14sp"
+        android:minWidth="0dip"
+        android:minHeight="0dip"
+        android:id="@+id/txtMenuPrice"
+        android:layout_above="@+id/txtMenuStatus"
+        android:layout_alignLeft="@+id/txtMenuName"
+        android:layout_alignStart="@+id/txtMenuName" />
 
 </RelativeLayout>
