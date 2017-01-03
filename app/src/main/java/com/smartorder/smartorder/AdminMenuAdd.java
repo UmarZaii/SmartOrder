@@ -8,6 +8,6 @@ public class AdminMenuAdd extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_menulist);
+        setContentView(R.layout.activity_admin_menuadd);
     }
 }
