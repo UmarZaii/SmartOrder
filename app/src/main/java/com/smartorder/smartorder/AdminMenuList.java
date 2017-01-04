@@ -7,18 +7,27 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Button;
 import android.widget.Toast;
 
 
 public class AdminMenuList extends AppCompatActivity implements View.OnClickListener {
 
+    Button btnAddMenu;
     Spinner spnMenuType;
     ArrayAdapter<CharSequence> adpMenuType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_menulist);
+
+        //Button Add Menu
+        btnAddMenu = (Button) findViewById(R.id.btnAddMenu);
+        btnAddMenu.setOnClickListener(this);
+
+        //ComboBox Menu Type
         spnMenuType = (Spinner)findViewById(R.id.spnMenuType);
         adpMenuType = ArrayAdapter.createFromResource(this,R.array.menu_types,android.R.layout.simple_spinner_item);
         adpMenuType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -34,6 +43,7 @@ public class AdminMenuList extends AppCompatActivity implements View.OnClickList
 
             }
         });
+
     }
 
     @Override
