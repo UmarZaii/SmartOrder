@@ -26,47 +26,6 @@
         android:layout_marginEnd="50dp"
         android:layout_marginTop="97dp" />
 
-    <TextView
-        android:text="@string/status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblMenuStatus"
-        android:textSize="16sp"
-        android:textStyle="normal|bold|italic"
-        android:textAllCaps="false"
-        android:layout_marginBottom="30dp"
-        android:layout_above="@+id/btnAddMenu"
-        android:layout_alignLeft="@+id/lblMenuPrice"
-        android:layout_alignStart="@+id/lblMenuPrice" />
-
-    <TextView
-        android:text="@string/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblMenuPrice"
-        android:textSize="16sp"
-        android:textStyle="normal|bold|italic"
-        android:textAllCaps="false"
-        android:layout_above="@+id/lblMenuStatus"
-        android:layout_alignLeft="@+id/lblMenuName"
-        android:layout_alignStart="@+id/lblMenuName"
-        android:layout_marginBottom="11dp" />
-
-    <TextView
-        android:text="@string/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblMenuName"
-        android:textSize="16sp"
-        android:textStyle="normal|bold|italic"
-        android:textAllCaps="false"
-        android:layout_marginRight="26dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="31dp"
-        android:layout_alignBottom="@+id/lblMenuPrice"
-        android:layout_toLeftOf="@+id/lblMenuPic"
-        android:layout_toStartOf="@+id/lblMenuPic" />
-
     <Button
         android:text="@string/add_menu"
         android:layout_width="wrap_content"
@@ -120,5 +79,44 @@
         android:layout_alignBottom="@+id/lblMenuPrice"
         android:layout_alignLeft="@+id/txtMenuName"
         android:layout_alignStart="@+id/txtMenuName" />
+
+    <TextView
+        android:text="@string/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblMenuStatus"
+        android:textSize="16sp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="false"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/btnAddMenu"
+        android:layout_alignLeft="@+id/lblMenuPrice"
+        android:layout_alignStart="@+id/lblMenuPrice" />
+
+    <TextView
+        android:text="@string/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblMenuPrice"
+        android:textSize="16sp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="false"
+        android:layout_above="@+id/txtMenuStatus"
+        android:layout_alignLeft="@+id/lblMenuName"
+        android:layout_alignStart="@+id/lblMenuName" />
+
+    <TextView
+        android:text="@string/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblMenuName"
+        android:textSize="16sp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="false"
+        android:layout_marginRight="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/lblMenuPic"
+        android:layout_toStartOf="@+id/lblMenuPic" />
 
 </RelativeLayout>

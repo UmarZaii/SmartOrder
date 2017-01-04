@@ -28,7 +28,7 @@ public class AdminMenuList extends AppCompatActivity implements View.OnClickList
         btnAddMenu.setOnClickListener(this);
 
         //ComboBox Menu Type
-        spnMenuType = (Spinner)findViewById(R.id.spnMenuType);
+        spnMenuType = (Spinner) findViewById(R.id.spnMenuType);
         adpMenuType = ArrayAdapter.createFromResource(this,R.array.menu_types,android.R.layout.simple_spinner_item);
         adpMenuType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnMenuType.setAdapter(adpMenuType);
@@ -45,7 +45,7 @@ public class AdminMenuList extends AppCompatActivity implements View.OnClickList
         });
 
     }
-    
+
     @Override
     public void onClick(View v) {
         switch ((v.getId())) {
