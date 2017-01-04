@@ -116,7 +116,8 @@
         android:minWidth="0dip"
         android:minHeight="0dip"
         android:id="@+id/txtMenuPrice"
-        android:layout_above="@+id/txtMenuStatus"
+        android:layout_alignBaseline="@+id/lblMenuPrice"
+        android:layout_alignBottom="@+id/lblMenuPrice"
         android:layout_alignLeft="@+id/txtMenuName"
         android:layout_alignStart="@+id/txtMenuName" />
 
