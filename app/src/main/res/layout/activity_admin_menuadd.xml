@@ -11,33 +11,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.smartorder.smartorder.AdminMenuList">
 
-    <TextView
-        android:text="@string/picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblMenuPic"
-        android:textSize="16sp"
-        android:textStyle="normal|bold|italic"
-        android:textAllCaps="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/btnAddMenu"
-        android:layout_alignEnd="@+id/btnAddMenu"
-        android:layout_marginRight="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginTop="97dp" />
-
-    <Button
-        android:text="@string/add_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnAddMenu"
-        android:textSize="16sp"
-        android:minWidth="0dip"
-        android:minHeight="0dip"
-        android:layout_marginBottom="133dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -113,10 +86,37 @@
         android:textSize="16sp"
         android:textStyle="normal|bold|italic"
         android:textAllCaps="false"
-        android:layout_marginRight="26dp"
-        android:layout_marginEnd="26dp"
-        android:layout_centerVertical="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_above="@+id/txtMenuPrice"
         android:layout_toLeftOf="@+id/lblMenuPic"
         android:layout_toStartOf="@+id/lblMenuPic" />
+
+    <Button
+        android:text="@string/add_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAddMenu"
+        android:textSize="16sp"
+        android:minWidth="0dip"
+        android:minHeight="0dip"
+        android:layout_marginBottom="97dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblMenuPic"
+        android:textSize="16sp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="false"
+        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="91dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/btnAddMenu"
+        android:layout_alignEnd="@+id/btnAddMenu" />
 
 </RelativeLayout>
