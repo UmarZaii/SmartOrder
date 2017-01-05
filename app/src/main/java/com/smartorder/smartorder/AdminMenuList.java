@@ -8,13 +8,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class AdminMenuList extends AppCompatActivity implements View.OnClickListener {
 
-    TextView testing = (TextView) findViewById(R.id.testing);
     Button btnAddMenu;
     Spinner spnMenuType;
     ArrayAdapter<CharSequence> adpMenuType;
@@ -38,20 +36,6 @@ public class AdminMenuList extends AppCompatActivity implements View.OnClickList
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(AdminMenuList.this, parent.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
-                switch (parent.getSelectedItem().toString()) {
-                    case "Air":
-                        testing.setText("Ini adalah Air");
-                        break;
-                    case "Sup":
-                        testing.setText("Ini adalah Sup");
-                        break;
-                    case "Nasi":
-                        testing.setText("Ini adalah Nasi");
-                        break;
-                    case "Mee":
-                        testing.setText("Ini adalah Mee");
-                        break;
-                }
             }
 
             @Override
