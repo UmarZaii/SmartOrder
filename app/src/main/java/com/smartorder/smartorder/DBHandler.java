@@ -24,11 +24,11 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_ORDERMENU + "(" +
-                COLUMN_MENUID + " INTEGER PRIMARY KEY AUTOINCREMENT " +
-                COLUMN_MENUNAME + " TEXT " +
-                COLUMN_MENUTYPE + " TEXT " +
-                COLUMN_MENUPRICE + " TEXT " +
-                COLUMN_MENUSTATUS + " TEXT " +
+                COLUMN_MENUID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COLUMN_MENUNAME + " TEXT," +
+                COLUMN_MENUTYPE + " TEXT," +
+                COLUMN_MENUPRICE + " TEXT," +
+                COLUMN_MENUSTATUS + " TEXT" +
                 ");";
         db.execSQL(query);
     }
@@ -59,7 +59,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public String databaseToString() {
         String dbString = "";
         SQLiteDatabase db = getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_ORDERMENU + "WHERE 1";
+        String query = "SELECT * FROM " + TABLE_ORDERMENU + " WHERE 1";
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         while(!c.isAfterLast()) {
