@@ -37,6 +37,7 @@ public class AdminRegStaff extends AppCompatActivity {
     }
 
     public void printDatabase() {
+
         String dbString = dbHandler.databaseToString();
     }
 

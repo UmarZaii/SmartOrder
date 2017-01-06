@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
 import android.content.Context;
 import android.content.ContentValues;
+import android.util.Log;
 
 public class DBHandler extends SQLiteOpenHelper {
 
@@ -122,4 +123,25 @@ public class DBHandler extends SQLiteOpenHelper {
         return dbString;
     }
 
+
+    public boolean getUserList(String nationalid, String pass) {
+        String selectQuery = "SELECT * FROM " + TABLE_USERLIST + " WHERE " +
+                COLUMN_NATIONALID + " = " +  "'"+nationalid+"'" + " and " + COLUMN_USERPASS + " = "
+                + "'"+pass+"'";
+        Log.d("Database View Data", nationalid);
+        Log.d("Database View Data", pass);
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        cursor.moveToFirst();
+        if (cursor.getCount() > 0){
+
+            return true;
+        }
+        cursor.close();
+        db.close();
+
+        return false;
+    }
 }
