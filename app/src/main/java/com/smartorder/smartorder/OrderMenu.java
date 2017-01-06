@@ -6,6 +6,7 @@ public class OrderMenu {
     private String _menuname;
     private String _menutype;
     private String _menuprice;
+    private String _menustatus1;
     private String _menustatus;
 
     public OrderMenu() {
