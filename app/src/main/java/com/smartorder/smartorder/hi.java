@@ -9,7 +9,4 @@ public class hi {
     //ddsad
     //dasdasdas
 
-    private static final int DATABASE_VERSION = 1;
-    private static final int DATABASE_VERSION2 = 2;
-
 }
