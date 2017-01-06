@@ -5,4 +5,6 @@ package com.smartorder.smartorder;
  */
 
 public class hi {
+    private static final int DATABASE_VERSION = 15;
+    //ddsad
 }
