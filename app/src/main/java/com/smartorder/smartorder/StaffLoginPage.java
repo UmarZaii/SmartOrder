@@ -6,10 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-/**
- * Created by mansoull on 6/1/2017.
- */
-
 public class StaffLoginPage extends AppCompatActivity implements View.OnClickListener {
 
     Button logStaff;
