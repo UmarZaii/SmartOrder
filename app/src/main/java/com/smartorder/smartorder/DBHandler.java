@@ -8,6 +8,8 @@ import android.content.ContentValues;
 
 public class DBHandler extends SQLiteOpenHelper {
 
+    //da
+
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "smartorder.db";
 

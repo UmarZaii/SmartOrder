@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 public class AdminRegStaff extends AppCompatActivity {
 
+    //da
     EditText txtNationalID, txtUserType, txtUserName, txtUserPass, txtPhoneNo;
     DBHandler dbHandler;
 
