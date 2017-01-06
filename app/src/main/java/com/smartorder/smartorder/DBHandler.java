@@ -12,7 +12,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "smartorder.db";
 
     private static final String TABLE_USERLIST = "userlist";
-    private static final String COLUMN_NATIONALID = "_nationalid";
+    private static final String COLUMN_NATIONALID = "nationalid";
     private static final String COLUMN_USERTYPE = "usertype";
     private static final String COLUMN_USERNAME = "username";
     private static final String COLUMN_USERPASS = "userpass";
