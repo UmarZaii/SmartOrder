@@ -37,7 +37,7 @@
         android:text="@string/add_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnAddMenu"
+        android:id="@+id/btnAddMenuPage"
         android:textSize="16sp"
         android:layout_alignBaseline="@+id/spnMenuType"
         android:layout_alignBottom="@+id/spnMenuType"
@@ -45,14 +45,5 @@
         android:layout_alignParentEnd="true"
         android:minWidth="0dip"
         android:minHeight="0dip" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/spnMenuType"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        tools:layout_height="330dp" />
 
 </RelativeLayout>

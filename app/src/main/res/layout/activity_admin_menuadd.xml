@@ -11,72 +11,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.smartorder.smartorder.AdminMenuList">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ice Lemon Tea"
-        android:ems="12"
-        android:textSize="14sp"
-        android:minWidth="0dip"
-        android:minHeight="0dip"
-        android:id="@+id/txtMenuName"
-        android:layout_alignBaseline="@+id/lblMenuName"
-        android:layout_alignBottom="@+id/lblMenuName"
-        android:layout_toRightOf="@+id/lblMenuStatus"
-        android:layout_toEndOf="@+id/lblMenuStatus" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Out Of Stock"
-        android:ems="12"
-        android:textSize="14sp"
-        android:minWidth="0dip"
-        android:minHeight="0dip"
-        android:id="@+id/txtMenuStatus"
-        android:layout_alignBaseline="@+id/lblMenuStatus"
-        android:layout_alignBottom="@+id/lblMenuStatus"
-        android:layout_toRightOf="@+id/lblMenuStatus"
-        android:layout_toEndOf="@+id/lblMenuStatus" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RM18"
-        android:ems="12"
-        android:textSize="14sp"
-        android:minWidth="0dip"
-        android:minHeight="0dip"
-        android:id="@+id/txtMenuPrice"
-        android:layout_alignBaseline="@+id/lblMenuPrice"
-        android:layout_alignBottom="@+id/lblMenuPrice"
-        android:layout_alignLeft="@+id/txtMenuName"
-        android:layout_alignStart="@+id/txtMenuName" />
-
     <TextView
-        android:text="@string/status"
+        android:text="@string/picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/lblMenuStatus"
+        android:id="@+id/lblMenuPic"
         android:textSize="16sp"
         android:textStyle="normal|bold|italic"
         android:textAllCaps="false"
-        android:layout_marginBottom="30dp"
-        android:layout_above="@+id/btnAddMenu"
-        android:layout_alignLeft="@+id/lblMenuPrice"
-        android:layout_alignStart="@+id/lblMenuPrice" />
-
-    <TextView
-        android:text="@string/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblMenuPrice"
-        android:textSize="16sp"
-        android:textStyle="normal|bold|italic"
-        android:textAllCaps="false"
-        android:layout_above="@+id/txtMenuStatus"
-        android:layout_alignLeft="@+id/lblMenuName"
-        android:layout_alignStart="@+id/lblMenuName" />
+        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="91dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/btnAddMenu"
+        android:layout_alignEnd="@+id/btnAddMenu" />
 
     <TextView
         android:text="@string/name"
@@ -92,6 +40,73 @@
         android:layout_toLeftOf="@+id/lblMenuPic"
         android:layout_toStartOf="@+id/lblMenuPic" />
 
+    <TextView
+        android:text="@string/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblMenuPrice"
+        android:textSize="16sp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="false"
+        android:layout_above="@+id/txtMenuStatus"
+        android:layout_alignLeft="@+id/lblMenuName"
+        android:layout_alignStart="@+id/lblMenuName" />
+
+    <TextView
+        android:text="@string/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblMenuStatus"
+        android:textSize="16sp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="false"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/btnAddMenu"
+        android:layout_alignLeft="@+id/lblMenuPrice"
+        android:layout_alignStart="@+id/lblMenuPrice" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Ice Lemon Tea"
+        android:ems="12"
+        android:textSize="14sp"
+        android:minWidth="0dip"
+        android:minHeight="0dip"
+        android:id="@+id/txtMenuName"
+        android:layout_alignBaseline="@+id/lblMenuName"
+        android:layout_alignBottom="@+id/lblMenuName"
+        android:layout_toRightOf="@+id/lblMenuStatus"
+        android:layout_toEndOf="@+id/lblMenuStatus" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="RM18"
+        android:ems="12"
+        android:textSize="14sp"
+        android:minWidth="0dip"
+        android:minHeight="0dip"
+        android:id="@+id/txtMenuPrice"
+        android:layout_alignBaseline="@+id/lblMenuPrice"
+        android:layout_alignBottom="@+id/lblMenuPrice"
+        android:layout_alignLeft="@+id/txtMenuName"
+        android:layout_alignStart="@+id/txtMenuName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Out Of Stock"
+        android:ems="12"
+        android:textSize="14sp"
+        android:minWidth="0dip"
+        android:minHeight="0dip"
+        android:id="@+id/txtMenuStatus"
+        android:layout_alignBaseline="@+id/lblMenuStatus"
+        android:layout_alignBottom="@+id/lblMenuStatus"
+        android:layout_toRightOf="@+id/lblMenuStatus"
+        android:layout_toEndOf="@+id/lblMenuStatus" />
+
     <Button
         android:text="@string/add_menu"
         android:layout_width="wrap_content"
@@ -102,21 +117,7 @@
         android:minHeight="0dip"
         android:layout_marginBottom="97dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="@string/picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblMenuPic"
-        android:textSize="16sp"
-        android:textStyle="normal|bold|italic"
-        android:textAllCaps="false"
-        android:layout_marginRight="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginTop="91dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/btnAddMenu"
-        android:layout_alignEnd="@+id/btnAddMenu" />
+        android:layout_centerHorizontal="true"
+        android:onClick="addButtonClicked" />
 
 </RelativeLayout>
