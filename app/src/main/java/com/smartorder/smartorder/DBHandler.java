@@ -10,6 +10,14 @@ public class DBHandler extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "smartorder.db";
+
+    private static final String TABLE_USERLIST = "userlist";
+    private static final String COLUMN_NATIONALID = "_nationalid";
+    private static final String COLUMN_USERTYPE = "usertype";
+    private static final String COLUMN_USERNAME = "username";
+    private static final String COLUMN_USERPASS = "userpass";
+    private static final String COLUMN_PHONENO = "phoneno";
+
     private static final String TABLE_ORDERMENU = "ordermenu";
     private static final String COLUMN_MENUID = "_menuid";
     private static final String COLUMN_MENUNAME = "menuname";
@@ -23,7 +31,16 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE " + TABLE_ORDERMENU + "(" +
+        String query;
+        query = "CREATE TABLE " + TABLE_USERLIST + "(" +
+                COLUMN_NATIONALID + " TEXT PRIMARY KEY," +
+                COLUMN_USERTYPE + " TEXT," +
+                COLUMN_USERNAME + " TEXT," +
+                COLUMN_USERPASS + " TEXT," +
+                COLUMN_PHONENO + " TEXT" +
+                ");";
+        db.execSQL(query);
+        query = "CREATE TABLE " + TABLE_ORDERMENU + "(" +
                 COLUMN_MENUID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_MENUNAME + " TEXT," +
                 COLUMN_MENUTYPE + " TEXT," +
@@ -35,8 +52,21 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERLIST);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_ORDERMENU);
         onCreate(db);
+    }
+
+    public void addUserList(UserList userList){
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NATIONALID, userList.get_nationalid());
+        values.put(COLUMN_USERTYPE, userList.get_usertype());
+        values.put(COLUMN_USERNAME, userList.get_username());
+        values.put(COLUMN_USERPASS, userList.get_userpass());
+        values.put(COLUMN_PHONENO, userList.get_phoneno());
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert(TABLE_USERLIST, null, values);
+        db.close();
     }
 
     public void addOrderMenu(OrderMenu orderMenu){
@@ -48,6 +78,12 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_ORDERMENU, null, values);
         db.close();
+    }
+
+    public void deleteUserList(String nationalID){
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "DELETE FROM " + TABLE_USERLIST + " WHERE " + COLUMN_NATIONALID + "=\"" + nationalID + "\";";
+        db.execSQL(query);
     }
 
     public void deleteOrderMenu(String menuName){

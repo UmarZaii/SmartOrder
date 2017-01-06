@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_admin_regstaff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.smartorder.smartorder.AdminRegStaff">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="User Type"
+        android:ems="10"
+        android:layout_marginTop="105dp"
+        android:id="@+id/txtUserType"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="National ID"
+        android:ems="10"
+        android:id="@+id/txtNationalID"
+        android:layout_below="@+id/txtUserType"
+        android:layout_alignLeft="@+id/txtUserType"
+        android:layout_alignStart="@+id/txtUserType" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:ems="10"
+        android:id="@+id/txtUserName"
+        android:layout_below="@+id/txtNationalID"
+        android:layout_alignLeft="@+id/txtNationalID"
+        android:layout_alignStart="@+id/txtNationalID" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:ems="10"
+        android:id="@+id/txtUserPass"
+        android:layout_below="@+id/txtUserName"
+        android:layout_alignLeft="@+id/txtUserName"
+        android:layout_alignStart="@+id/txtUserName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Phone No"
+        android:ems="10"
+        android:id="@+id/txtPhoneNo"
+        android:layout_below="@+id/txtUserPass"
+        android:layout_alignLeft="@+id/txtUserPass"
+        android:layout_alignStart="@+id/txtUserPass" />
+
+    <Button
+        android:text="Register Staff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:id="@+id/btnRegStaff"
+        android:layout_below="@+id/txtPhoneNo"
+        android:layout_centerHorizontal="true"
+        android:onClick="addButtonClicked" />
+
+</RelativeLayout>
