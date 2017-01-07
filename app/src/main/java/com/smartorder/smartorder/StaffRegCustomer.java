@@ -58,7 +58,7 @@ public class StaffRegCustomer extends AppCompatActivity implements View.OnClickL
         String PhoneNum = txtPhoneNum.getText().toString();
 
         if(NationalID.isEmpty() && UserType.isEmpty() && UserName.isEmpty() && UserPass.isEmpty() && PhoneNum.isEmpty() ){
-            displayToast("Username/password field empty");
+            displayToast("One of the field empty");
         }
         else{
             UserList userList = new UserList(NationalID,UserType,UserName,UserPass,PhoneNum);
