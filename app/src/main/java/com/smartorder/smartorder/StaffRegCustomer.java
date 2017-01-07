@@ -30,8 +30,6 @@ public class StaffRegCustomer extends AppCompatActivity implements View.OnClickL
         regStaff.setOnClickListener(this);
         backHome.setOnClickListener(this);
 
-
-
     }
 
     @Override
@@ -41,7 +39,7 @@ public class StaffRegCustomer extends AppCompatActivity implements View.OnClickL
                 register();
                 break;
             case R.id.btnBackHome:
-                Intent i = new Intent(getBaseContext(),StaffHomePage.class);
+                Intent i = new Intent(getBaseContext(),TestingForStaffAddRegCust.class);
                 //  startActivity(new Intent(this,StaffHomePage.class));
                 this.startActivity(i);
                 finish();
