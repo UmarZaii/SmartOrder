@@ -10,13 +10,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="120dp"
-        android:text="Smart Order"
+        android:text="@string/app_name"
         android:textSize="30sp"
         android:textColor="@color/colorPrimaryDark"
         android:padding="20dp"/>
 
     <EditText
-        android:id="@+id/icStaff"
+        android:id="@+id/txtStaffID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="National Id"
@@ -27,7 +27,7 @@
         />
 
     <EditText
-        android:id="@+id/pwdStaff"
+        android:id="@+id/txtStaffPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -37,15 +37,15 @@
         android:layout_marginLeft="15dp"/>
 
     <Button
-        android:id="@+id/logBtnStaff"
+        android:id="@+id/btnLogStaff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="#fff"
         android:background="@color/colorPrimaryDark"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
-        android:onClick="logStaff"/>
+        android:onClick="loginStaff"/>
 
 </LinearLayout>

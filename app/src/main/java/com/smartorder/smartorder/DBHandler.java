@@ -124,19 +124,16 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
-    public boolean getUserList(String nationalid, String pass) {
+    public boolean getUserList(String staffID, String staffPass) {
         String selectQuery = "SELECT * FROM " + TABLE_USERLIST + " WHERE " +
-                COLUMN_NATIONALID + " = " +  "'"+nationalid+"'" + " and " + COLUMN_USERPASS + " = "
-                + "'"+pass+"'";
-        Log.d("Database View Data", nationalid);
-        Log.d("Database View Data", pass);
+                COLUMN_NATIONALID + " = " +  "'"+staffID+"'" + " AND " + COLUMN_USERPASS + " = "
+                + "'"+staffPass+"'";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         cursor.moveToFirst();
         if (cursor.getCount() > 0){
-
             return true;
         }
         cursor.close();

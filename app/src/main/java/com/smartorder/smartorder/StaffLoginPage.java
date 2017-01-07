@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 public class StaffLoginPage extends AppCompatActivity implements View.OnClickListener {
 
-    Button logStaff;
-    TextView icStaff, pwdStaff;
+    Button btnLogStaff;
+    TextView txtStaffID, txtStaffPass;
     DBHandler dbHandler;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,28 +20,28 @@ public class StaffLoginPage extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_staff_loginpage);
 
         dbHandler = new DBHandler(this,null,null,1);
-        logStaff = (Button) findViewById(R.id.logBtnStaff);
-        icStaff = (EditText) findViewById(R.id.icStaff);
-        pwdStaff = (EditText) findViewById(R.id.pwdStaff);
+        btnLogStaff = (Button) findViewById(R.id.btnLogStaff);
+        txtStaffID = (EditText) findViewById(R.id.txtStaffID);
+        txtStaffPass = (EditText) findViewById(R.id.txtStaffPass);
 
-        logStaff.setOnClickListener(this);
+        btnLogStaff.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.logBtnStaff:
+            case R.id.btnLogStaff:
                 login();
                 break;
             default:
         }
     }
 
-    private void login() {
-        String nationalid = icStaff.getText().toString();
-        String pass = pwdStaff.getText().toString();
+    private void loginStaff() {
+        String inputStaffID = txtStaffID.getText().toString();
+        String inputStaffPass = txtStaffPass.getText().toString();
 
-        if(dbHandler.getUserList(nationalid,pass)){
+        if(dbHandler.getUserList(inputStaffID,inputStaffPass)){
             startActivity(new Intent(this, StaffHomePage.class));
             finish();
         } else{
