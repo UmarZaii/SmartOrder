@@ -42,7 +42,7 @@ public class StaffLoginPage extends AppCompatActivity implements View.OnClickLis
         String inputStaffPass = txtStaffPass.getText().toString();
 
         if(dbHandler.getUserList(inputStaffID,inputStaffPass)){
-            startActivity(new Intent(this, AdminMenuAdd.class));
+            startActivity(new Intent(this, AdminMenuList.class));
             finish();
         } else{
             Toast.makeText(getApplicationContext(), "Wrong email/password",Toast.LENGTH_SHORT).show();
