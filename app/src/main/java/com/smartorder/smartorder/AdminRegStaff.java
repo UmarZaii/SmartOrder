@@ -1,5 +1,6 @@
 package com.smartorder.smartorder;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,6 +28,7 @@ public class AdminRegStaff extends AppCompatActivity {
         UserList userList = new UserList(txtNationalID.getText().toString(), txtUserType.getText().toString(), txtUserName.getText().toString(), txtUserPass.getText().toString(), txtPhoneNo.getText().toString());
         dbHandler.addUserList(userList);
         printDatabase();
+        startActivity(new Intent(this, StaffLoginPage.class));
     }
 
     public void deleteButtonClicked(View view) {
