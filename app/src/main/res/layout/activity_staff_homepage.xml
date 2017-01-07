@@ -31,10 +31,12 @@
         android:text="View Order"/>
 
     <Button
+        android:id="@+id/btnreg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
-        android:text="Register"/>
+        android:text="Register"
+        android:onClick="EnterRegStaff"/>
 
     <TextView
         android:id="@+id/tvLogOutStaff"

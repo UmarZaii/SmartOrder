@@ -16,12 +16,14 @@ public class BackgroundTask extends AsyncTask<String,OrderMenu,String> {
     Activity activity;
     ListView menuList;
     BackgroundTask(Context context) {
+
         this.context = context;
         activity = (Activity)context;
     }
 
     @Override
     protected void onPreExecute() {
+
         super.onPreExecute();
     }
 
