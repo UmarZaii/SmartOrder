@@ -11,9 +11,6 @@
         <activity android:name=".AdminMenuList"></activity>
         <activity android:name=".AdminMenuAdd"></activity>
         <activity android:name=".AdminRegStaff"></activity>
-        <activity android:name=".StaffLoginPage">
-        <activity android:name=".AdminMenuAdd"></activity>
-        <activity android:name=".AdminRegStaff"></activity>
         <activity android:name=".StaffLoginPage"></activity>
         <activity android:name=".DisplayMenuList">
             <intent-filter>
