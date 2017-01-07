@@ -47,4 +47,8 @@ public class AdminMenuList extends AppCompatActivity {
         startActivity(new Intent(this, AdminMenuAdd.class));
     }
 
+    public void viewMenuPage(View view) {
+        startActivity(new Intent(this, DisplayMenuList.class));
+    }
+
 }

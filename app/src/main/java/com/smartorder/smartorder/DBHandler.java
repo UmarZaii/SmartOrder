@@ -9,22 +9,22 @@ import android.util.Log;
 
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "smartorder.db";
+    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "smartorder.db";
 
-    private static final String TABLE_USERLIST = "userlist";
-    private static final String COLUMN_NATIONALID = "nationalid";
-    private static final String COLUMN_USERTYPE = "usertype";
-    private static final String COLUMN_USERNAME = "username";
-    private static final String COLUMN_USERPASS = "userpass";
-    private static final String COLUMN_PHONENO = "phoneno";
+    public static final String TABLE_USERLIST = "userlist";
+    public static final String COLUMN_NATIONALID = "nationalid";
+    public static final String COLUMN_USERTYPE = "usertype";
+    public static final String COLUMN_USERNAME = "username";
+    public static final String COLUMN_USERPASS = "userpass";
+    public static final String COLUMN_PHONENO = "phoneno";
 
-    private static final String TABLE_ORDERMENU = "ordermenu";
-    private static final String COLUMN_MENUID = "_menuid";
-    private static final String COLUMN_MENUTYPE = "menutype";
-    private static final String COLUMN_MENUNAME = "menuname";
-    private static final String COLUMN_MENUPRICE = "menuprice";
-    private static final String COLUMN_MENUSTATUS = "menustatus";
+    public static final String TABLE_ORDERMENU = "ordermenu";
+    public static final String COLUMN_MENUID = "menuid";
+    public static final String COLUMN_MENUTYPE = "menutype";
+    public static final String COLUMN_MENUNAME = "menuname";
+    public static final String COLUMN_MENUPRICE = "menuprice";
+    public static final String COLUMN_MENUSTATUS = "menustatus";
 
     public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
@@ -121,6 +121,11 @@ public class DBHandler extends SQLiteOpenHelper {
 //        return dbString;
 //    }
 
+    public Cursor getMenuList(SQLiteDatabase db) {
+        String[] dbColumns = { COLUMN_MENUTYPE, COLUMN_MENUNAME, COLUMN_MENUPRICE, COLUMN_MENUSTATUS };
+        Cursor cursor = db.query(TABLE_ORDERMENU, dbColumns, null, null, null, null, null);
+        return cursor;
+    }
 
     public boolean getUserList(String staffID, String staffPass) {
         String selectQuery = "SELECT * FROM " + TABLE_USERLIST + " WHERE " +
