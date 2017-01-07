@@ -9,14 +9,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AdminMenuList"></activity>
-        <activity android:name=".AdminMenuAdd">
+        <activity android:name=".AdminMenuAdd"></activity>
+        <activity android:name=".AdminRegStaff"></activity>
+        <activity android:name=".StaffLoginPage"></activity>
+        <activity android:name=".DisplayMenuList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdminRegStaff"></activity>
-        <activity android:name=".StaffLoginPage"></activity>
     </application>
 
 </manifest>

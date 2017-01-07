@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent" android:layout_height="75dp">
+
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="70dp"
+        android:id="@+id/lblMenuType"
+        android:layout_alignParentLeft="true"
+        android:hint="Type"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="150dp"
+        android:id="@+id/lblMenuName"
+        android:layout_toRightOf="@+id/lblMenuType"
+        android:hint="Name"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="90dp"
+        android:id="@+id/lblMenuPrice"
+        android:layout_toRightOf="@+id/lblMenuName"
+        android:hint="Price"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="70dp"
+        android:id="@+id/lblMenuStatus"
+        android:layout_toRightOf="@+id/lblMenuPrice"
+        android:hint="Status"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+</RelativeLayout>
