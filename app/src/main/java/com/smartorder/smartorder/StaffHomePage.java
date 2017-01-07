@@ -44,7 +44,7 @@ public class StaffHomePage extends AppCompatActivity implements View.OnClickList
     public void onClick(View vie) {
         switch (vie.getId()){
             case R.id.btnreg:
-                startActivity(new Intent(this,StaffRegCust.class));
+                startActivity(new Intent(this,StaffRegCustomer.class));
         }
     }
 }
