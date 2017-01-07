@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-//thi is wat
 public class StaffRegCustomer extends AppCompatActivity implements View.OnClickListener {
     EditText txtUserType, txtNationalID, txtUserName, txtUserPass, txtPhoneNum;
     Button regStaff, backHome;
