@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".StaffHomePage"></activity>
-        <activity android:name=".StaffRegCust"></activity>
     </application>
 
 </manifest>
