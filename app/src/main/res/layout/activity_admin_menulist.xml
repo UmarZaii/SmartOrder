@@ -47,7 +47,7 @@
         android:layout_marginStart="12dp"></Spinner>
 
     <Button
-        android:text="@string/add_menu"
+        android:text="Manage Menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnAddMenuPage"

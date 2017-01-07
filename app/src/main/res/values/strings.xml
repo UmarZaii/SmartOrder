@@ -2,6 +2,8 @@
     <string name="app_name">Smart Order</string>
     <string name="view_menu">View Menu</string>
     <string name="add_menu">Add Menu</string>
+    <string name="del_menu">Delete Menu</string>
+    <string name="upd_menu">Update Menu</string>
     <string name="login">Login</string>
     <string name="select_menu">Menu Type : </string>
     <string-array name="menu_types">

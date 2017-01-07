@@ -81,6 +81,17 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updOrderMenu(OrderMenu orderMenu){
+//        ContentValues values = new ContentValues();
+//        values.put(COLUMN_MENUTYPE, orderMenu.get_menutype());
+//        values.put(COLUMN_MENUNAME, orderMenu.get_menuname());
+//        values.put(COLUMN_MENUPRICE, orderMenu.get_menuprice());
+//        values.put(COLUMN_MENUSTATUS, orderMenu.get_menustatus());
+//        SQLiteDatabase db = getWritableDatabase();
+//        db.insert(TABLE_ORDERMENU, null, values);
+//        db.close();
+    }
+
     public void deleteUserList(String nationalID){
         SQLiteDatabase db = getWritableDatabase();
         String query = "DELETE FROM " + TABLE_USERLIST + " WHERE " + COLUMN_NATIONALID + "=\"" + nationalID + "\";";
@@ -92,34 +103,6 @@ public class DBHandler extends SQLiteOpenHelper {
         String query = "DELETE FROM " + TABLE_ORDERMENU + " WHERE " + COLUMN_MENUNAME + "=\"" + menuName + "\";";
         db.execSQL(query);
     }
-
-//    public String databaseToString() {
-//        String dbString = "";
-//        SQLiteDatabase db = getWritableDatabase();
-//        String query = "SELECT * FROM " + TABLE_ORDERMENU + " WHERE 1";
-//        Cursor c = db.rawQuery(query, null);
-//        c.moveToFirst();
-//        while(!c.isAfterLast()) {
-//            if(c.getString(c.getColumnIndex("menutype")) != null) {
-//                dbString += c.getString(c.getColumnIndex("menutype"));
-//                dbString += "\t";
-//            }
-//            if(c.getString(c.getColumnIndex("menuname")) != null) {
-//                dbString += c.getString(c.getColumnIndex("menuname"));
-//                dbString += "\t";
-//            }
-//            if(c.getString(c.getColumnIndex("menuprice")) != null) {
-//                dbString += c.getString(c.getColumnIndex("menuprice"));
-//                dbString += "\t";
-//            }
-//            if(c.getString(c.getColumnIndex("menustatus")) != null) {
-//                dbString += c.getString(c.getColumnIndex("menustatus"));
-//                dbString += "\n";
-//            }
-//        }
-//        db.close();
-//        return dbString;
-//    }
 
     public Cursor getMenuList(SQLiteDatabase db) {
         String[] dbColumns = { COLUMN_MENUTYPE, COLUMN_MENUNAME, COLUMN_MENUPRICE, COLUMN_MENUSTATUS };

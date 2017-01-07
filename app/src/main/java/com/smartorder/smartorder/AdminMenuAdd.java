@@ -20,7 +20,6 @@ public class AdminMenuAdd extends AppCompatActivity {
         txtMenuPrice = (EditText) findViewById(R.id.txtMenuPrice);
         txtMenuStatus = (EditText) findViewById(R.id.txtMenuStatus);
         dbHandler = new DBHandler(this, null, null, 1);
-//        printDatabase();
     }
 
     public void addButtonClicked(View view) {
@@ -31,7 +30,6 @@ public class AdminMenuAdd extends AppCompatActivity {
 
 //        OrderMenu orderMenu = new OrderMenu(menuType, menuName, menuPrice, menuStatus);
 //        dbHandler.addOrderMenu(orderMenu);
-//        printDatabase();
         BackgroundTask bgTask = new BackgroundTask(this);
         bgTask.execute("add_menu", menuType, menuName, menuPrice, menuStatus);
 
@@ -41,11 +39,18 @@ public class AdminMenuAdd extends AppCompatActivity {
     public void deleteButtonClicked(View view) {
         String inputMenuname = txtMenuName.getText().toString();
         dbHandler.deleteOrderMenu(inputMenuname);
-//        printDatabase();
     }
 
-//    public void printDatabase() {
-//        String dbString = dbHandler.databaseToString();
-//    }
+    public void updateButtonClicked(View view) {
+        menuType = "Air";
+        menuName = txtMenuName.getText().toString();
+        menuPrice = txtMenuPrice.getText().toString();
+        menuStatus = txtMenuStatus.getText().toString();
+
+        OrderMenu orderMenu = new OrderMenu(menuType, menuName, menuPrice, menuStatus);
+        dbHandler.updOrderMenu(orderMenu);
+
+        startActivity(new Intent(this, AdminMenuList.class));
+    }
 
 }
