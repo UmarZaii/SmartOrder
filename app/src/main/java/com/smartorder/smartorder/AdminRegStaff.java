@@ -21,25 +21,24 @@ public class AdminRegStaff extends AppCompatActivity {
         txtUserPass = (EditText) findViewById(R.id.txtUserPass);
         txtPhoneNo = (EditText) findViewById(R.id.txtPhoneNo);
         dbHandler = new DBHandler(this, null, null, 1);
-        printDatabase();
+//        printDatabase();
     }
 
     public void addButtonClicked(View view) {
         UserList userList = new UserList(txtNationalID.getText().toString(), txtUserType.getText().toString(), txtUserName.getText().toString(), txtUserPass.getText().toString(), txtPhoneNo.getText().toString());
         dbHandler.addUserList(userList);
-        printDatabase();
+//        printDatabase();
         startActivity(new Intent(this, StaffLoginPage.class));
     }
 
     public void deleteButtonClicked(View view) {
         String inputNationalID = txtNationalID.getText().toString();
         dbHandler.deleteUserList(inputNationalID);
-        printDatabase();
+//        printDatabase();
     }
 
-    public void printDatabase() {
-
-        String dbString = dbHandler.databaseToString();
-    }
+//    public void printDatabase() {
+//        String dbString = dbHandler.databaseToString();
+//    }
 
 }

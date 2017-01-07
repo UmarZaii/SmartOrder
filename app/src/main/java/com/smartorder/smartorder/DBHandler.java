@@ -93,33 +93,33 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
-    public String databaseToString() {
-        String dbString = "";
-        SQLiteDatabase db = getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_ORDERMENU + " WHERE 1";
-        Cursor c = db.rawQuery(query, null);
-        c.moveToFirst();
-        while(!c.isAfterLast()) {
-            if(c.getString(c.getColumnIndex("menutype")) != null) {
-                dbString += c.getString(c.getColumnIndex("menutype"));
-                dbString += "\t";
-            }
-            if(c.getString(c.getColumnIndex("menuname")) != null) {
-                dbString += c.getString(c.getColumnIndex("menuname"));
-                dbString += "\t";
-            }
-            if(c.getString(c.getColumnIndex("menuprice")) != null) {
-                dbString += c.getString(c.getColumnIndex("menuprice"));
-                dbString += "\t";
-            }
-            if(c.getString(c.getColumnIndex("menustatus")) != null) {
-                dbString += c.getString(c.getColumnIndex("menustatus"));
-                dbString += "\n";
-            }
-        }
-        db.close();
-        return dbString;
-    }
+//    public String databaseToString() {
+//        String dbString = "";
+//        SQLiteDatabase db = getWritableDatabase();
+//        String query = "SELECT * FROM " + TABLE_ORDERMENU + " WHERE 1";
+//        Cursor c = db.rawQuery(query, null);
+//        c.moveToFirst();
+//        while(!c.isAfterLast()) {
+//            if(c.getString(c.getColumnIndex("menutype")) != null) {
+//                dbString += c.getString(c.getColumnIndex("menutype"));
+//                dbString += "\t";
+//            }
+//            if(c.getString(c.getColumnIndex("menuname")) != null) {
+//                dbString += c.getString(c.getColumnIndex("menuname"));
+//                dbString += "\t";
+//            }
+//            if(c.getString(c.getColumnIndex("menuprice")) != null) {
+//                dbString += c.getString(c.getColumnIndex("menuprice"));
+//                dbString += "\t";
+//            }
+//            if(c.getString(c.getColumnIndex("menustatus")) != null) {
+//                dbString += c.getString(c.getColumnIndex("menustatus"));
+//                dbString += "\n";
+//            }
+//        }
+//        db.close();
+//        return dbString;
+//    }
 
 
     public boolean getUserList(String staffID, String staffPass) {

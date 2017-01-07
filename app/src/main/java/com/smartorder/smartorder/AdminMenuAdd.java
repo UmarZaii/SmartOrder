@@ -1,5 +1,6 @@
 package com.smartorder.smartorder;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,7 +20,7 @@ public class AdminMenuAdd extends AppCompatActivity {
         txtMenuPrice = (EditText) findViewById(R.id.txtMenuPrice);
         txtMenuStatus = (EditText) findViewById(R.id.txtMenuStatus);
         dbHandler = new DBHandler(this, null, null, 1);
-        printDatabase();
+//        printDatabase();
     }
 
     public void addButtonClicked(View view) {
@@ -27,24 +28,24 @@ public class AdminMenuAdd extends AppCompatActivity {
         menuName = txtMenuName.getText().toString();
         menuPrice = txtMenuPrice.getText().toString();
         menuStatus = txtMenuStatus.getText().toString();
-        OrderMenu orderMenu = new OrderMenu(menuType, menuName, menuPrice, menuStatus);
-        dbHandler.addOrderMenu(orderMenu);
-        printDatabase();
 
+//        OrderMenu orderMenu = new OrderMenu(menuType, menuName, menuPrice, menuStatus);
+//        dbHandler.addOrderMenu(orderMenu);
+//        printDatabase();
         BackgroundTask bgTask = new BackgroundTask(this);
         bgTask.execute("add_menu", menuType, menuName, menuPrice, menuStatus);
-        finish();
 
+        startActivity(new Intent(this, AdminMenuList.class));
     }
 
     public void deleteButtonClicked(View view) {
         String inputMenuname = txtMenuName.getText().toString();
         dbHandler.deleteOrderMenu(inputMenuname);
-        printDatabase();
+//        printDatabase();
     }
 
-    public void printDatabase() {
-        String dbString = dbHandler.databaseToString();
-    }
+//    public void printDatabase() {
+//        String dbString = dbHandler.databaseToString();
+//    }
 
 }
