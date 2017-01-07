@@ -13,9 +13,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-public class AdminMenuList extends AppCompatActivity implements View.OnClickListener {
+public class AdminMenuList extends AppCompatActivity {
 
-    Button btnAddMenuPage;
     Spinner spnMenuType;
     ArrayAdapter<CharSequence> adpMenuType;
 
@@ -24,10 +23,6 @@ public class AdminMenuList extends AppCompatActivity implements View.OnClickList
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_menulist);
-
-        //Button Add Menu
-        btnAddMenuPage = (Button) findViewById(R.id.btnAddMenuPage);
-        btnAddMenuPage.setOnClickListener(this);
 
         //ComboBox Menu Type
         spnMenuType = (Spinner) findViewById(R.id.spnMenuType);
@@ -48,17 +43,8 @@ public class AdminMenuList extends AppCompatActivity implements View.OnClickList
 
     }
 
-    public void addMenu(View view) {
-        
+    public void addMenuPage(View view) {
+        startActivity(new Intent(this, AdminMenuAdd.class));
     }
 
-    @Override
-    public void onClick(View v) {
-        switch ((v.getId())) {
-            case R.id.btnAddMenuPage:
-                startActivity(new Intent(this, AdminMenuAdd.class));
-                break;
-        }
-
-    }
 }
