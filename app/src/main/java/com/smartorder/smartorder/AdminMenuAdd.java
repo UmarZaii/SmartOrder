@@ -30,6 +30,11 @@ public class AdminMenuAdd extends AppCompatActivity {
         OrderMenu orderMenu = new OrderMenu(menuType, menuName, menuPrice, menuStatus);
         dbHandler.addOrderMenu(orderMenu);
         printDatabase();
+
+        BackgroundTask bgTask = new BackgroundTask(this);
+        bgTask.execute("add_menu", menuType, menuName, menuPrice, menuStatus);
+        finish();
+
     }
 
     public void deleteButtonClicked(View view) {
