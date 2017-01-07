@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 public class AdminMenuAdd extends AppCompatActivity {
 
+    String menuType, menuName, menuPrice, menuStatus;
     EditText txtMenuName, txtMenuPrice, txtMenuStatus;
     DBHandler dbHandler;
 
@@ -22,7 +23,11 @@ public class AdminMenuAdd extends AppCompatActivity {
     }
 
     public void addButtonClicked(View view) {
-        OrderMenu orderMenu = new OrderMenu(txtMenuName.getText().toString(), "Air", txtMenuPrice.getText().toString(), txtMenuStatus.getText().toString());
+        menuType = "Air";
+        menuName = txtMenuName.getText().toString();
+        menuPrice = txtMenuPrice.getText().toString();
+        menuStatus = txtMenuStatus.getText().toString();
+        OrderMenu orderMenu = new OrderMenu(menuType, menuName, menuPrice, menuStatus);
         dbHandler.addOrderMenu(orderMenu);
         printDatabase();
     }

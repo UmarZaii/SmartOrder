@@ -21,8 +21,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
     private static final String TABLE_ORDERMENU = "ordermenu";
     private static final String COLUMN_MENUID = "_menuid";
-    private static final String COLUMN_MENUNAME = "menuname";
     private static final String COLUMN_MENUTYPE = "menutype";
+    private static final String COLUMN_MENUNAME = "menuname";
     private static final String COLUMN_MENUPRICE = "menuprice";
     private static final String COLUMN_MENUSTATUS = "menustatus";
 
@@ -43,8 +43,8 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(query);
         query = "CREATE TABLE " + TABLE_ORDERMENU + "(" +
                 COLUMN_MENUID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COLUMN_MENUNAME + " TEXT," +
                 COLUMN_MENUTYPE + " TEXT," +
+                COLUMN_MENUNAME + " TEXT," +
                 COLUMN_MENUPRICE + " TEXT," +
                 COLUMN_MENUSTATUS + " TEXT" +
                 ");";
@@ -72,8 +72,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public void addOrderMenu(OrderMenu orderMenu){
         ContentValues values = new ContentValues();
-        values.put(COLUMN_MENUNAME, orderMenu.get_menuname());
         values.put(COLUMN_MENUTYPE, orderMenu.get_menutype());
+        values.put(COLUMN_MENUNAME, orderMenu.get_menuname());
         values.put(COLUMN_MENUPRICE, orderMenu.get_menuprice());
         values.put(COLUMN_MENUSTATUS, orderMenu.get_menustatus());
         SQLiteDatabase db = getWritableDatabase();
@@ -100,12 +100,12 @@ public class DBHandler extends SQLiteOpenHelper {
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         while(!c.isAfterLast()) {
-            if(c.getString(c.getColumnIndex("menuname")) != null) {
-                dbString += c.getString(c.getColumnIndex("menuname"));
-                dbString += "\t";
-            }
             if(c.getString(c.getColumnIndex("menutype")) != null) {
                 dbString += c.getString(c.getColumnIndex("menutype"));
+                dbString += "\t";
+            }
+            if(c.getString(c.getColumnIndex("menuname")) != null) {
+                dbString += c.getString(c.getColumnIndex("menuname"));
                 dbString += "\t";
             }
             if(c.getString(c.getColumnIndex("menuprice")) != null) {
