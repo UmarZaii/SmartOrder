@@ -14,17 +14,24 @@ public class StaffLoginPage extends AppCompatActivity implements View.OnClickLis
     Button btnLogStaff;
     TextView txtStaffID, txtStaffPass;
     DBHandler dbHandler;
+    Session s;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff_loginpage);
 
         dbHandler = new DBHandler(this,null,null,1);
+        s = new Session(this);
         btnLogStaff = (Button) findViewById(R.id.btnLogStaff);
         txtStaffID = (EditText) findViewById(R.id.txtStaffID);
         txtStaffPass = (EditText) findViewById(R.id.txtStaffPass);
 
         btnLogStaff.setOnClickListener(this);
+
+        if(s.loggedin()){
+            startActivity(new Intent(this,StaffHomePage.class));
+            finish();
+        }
     }
 
     @Override
@@ -42,7 +49,8 @@ public class StaffLoginPage extends AppCompatActivity implements View.OnClickLis
         String inputStaffPass = txtStaffPass.getText().toString();
 
         if(dbHandler.getUserList(inputStaffID,inputStaffPass)){
-            startActivity(new Intent(this, AdminMenuList.class));
+            s.setLoggedin(true);
+            startActivity(new Intent(this, StaffHomePage.class));
             finish();
         } else{
             Toast.makeText(getApplicationContext(), "Wrong email/password",Toast.LENGTH_SHORT).show();
