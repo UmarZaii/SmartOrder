@@ -27,20 +27,12 @@ public class TestingForStaffAddRegCust extends AppCompatActivity implements OnIt
     public static TestingForStaffAddRegCust TFSAR;
     public static String selections;
 
-    TextView txtNationalID, txtUserType, txtUserName, txtUserPass, txtPhoneNo;
-    String strNationalID, strUserType, strUserName, strUserPass, strPhoneNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.testing_for_staffaddregcust);
         Button btn=(Button)findViewById(R.id.button2);
-
-        txtNationalID = (TextView) findViewById(R.id.textView1);
-        txtUserType = (TextView) findViewById(R.id.textView2);
-        txtUserName = (TextView) findViewById(R.id.textView3);
-        txtUserPass = (TextView) findViewById(R.id.textView4);
-        txtPhoneNo = (TextView) findViewById(R.id.textView5);
         ListView01 = (ListView)findViewById(R.id.listView1);
         ListView01.setOnItemClickListener(TestingForStaffAddRegCust.this);
 

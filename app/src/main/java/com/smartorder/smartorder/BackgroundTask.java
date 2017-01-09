@@ -5,10 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class BackgroundTask extends AsyncTask<String,OrderMenu,String> {
+public class BackgroundTask extends AsyncTask<String,OrderMenu,String> implements AdapterView.OnItemClickListener{
 
     Context context;
     DBHandler dbHandler;
@@ -84,4 +86,8 @@ public class BackgroundTask extends AsyncTask<String,OrderMenu,String> {
 
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+    }
 }
