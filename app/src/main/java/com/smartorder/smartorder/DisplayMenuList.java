@@ -12,4 +12,5 @@ public class DisplayMenuList extends AppCompatActivity {
         BackgroundTask bgTask = new BackgroundTask(this);
         bgTask.execute("disp_menu");
     }
+
 }

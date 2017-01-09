@@ -47,10 +47,12 @@ public class BackgroundTask extends AsyncTask<String,OrderMenu,String> {
         } else if (method.equals("disp_menu")) {
 
             menuList = (ListView)activity.findViewById(R.id.dispMenuList);
+//            menuList.setSelected(true);
             SQLiteDatabase db = dbHandler.getReadableDatabase();
             Cursor cursor = dbHandler.getMenuList(db);
             adapterMenuList = new AdapterMenuList(context,R.layout.fragment_row_menulist);
             String menuType, menuName, menuPrice, menuStatus;
+//            menuList.setOnItemClickListener();
             while(cursor.moveToNext()) {
                 menuType = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUTYPE));
                 menuName = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUNAME));

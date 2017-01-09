@@ -82,14 +82,6 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     public void updOrderMenu(OrderMenu orderMenu){
-//        ContentValues values = new ContentValues();
-//        values.put(COLUMN_MENUTYPE, orderMenu.get_menutype());
-//        values.put(COLUMN_MENUNAME, orderMenu.get_menuname());
-//        values.put(COLUMN_MENUPRICE, orderMenu.get_menuprice());
-//        values.put(COLUMN_MENUSTATUS, orderMenu.get_menustatus());
-//        SQLiteDatabase db = getWritableDatabase();
-//        db.insert(TABLE_ORDERMENU, null, values);
-//        db.close();
     }
 
     public void deleteUserList(String nationalID){

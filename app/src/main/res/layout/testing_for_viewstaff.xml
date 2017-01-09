@@ -60,20 +60,20 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView5"
         android:layout_alignBottom="@+id/textView5"
-        android:layout_alignLeft="@+id/TextView03"
+        android:layout_alignLeft="@+id/TextView04"
         android:text="PhoneNo" />
 
     <TextView
-        android:id="@+id/TextView03"
+        android:id="@+id/TextView04"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/TextView04"
+        android:layout_alignLeft="@+id/TextView03"
         android:text="UserPass" />
 
     <TextView
-        android:id="@+id/TextView04"
+        android:id="@+id/TextView03"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView3"

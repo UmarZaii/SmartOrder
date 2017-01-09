@@ -13,7 +13,8 @@ public class TestingForViewStaff extends AppCompatActivity {
     protected Cursor cursor;
     DBHandler dbhandler;
     Button ton2;
-    TextView text1, text2, text3, text4, text5;
+    TextView txtNationalID, txtUserType, txtUserName, txtUserPass, txtPhoneNo;
+    String strNationalID, strUserType, strUserName, strUserPass, strPhoneNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,23 +22,20 @@ public class TestingForViewStaff extends AppCompatActivity {
         setContentView(R.layout.testing_for_viewstaff);
 
         dbhandler = new DBHandler(this, null, null, 1);
-        text1 = (TextView) findViewById(R.id.textView1);
-        text2 = (TextView) findViewById(R.id.textView2);
-        text3 = (TextView) findViewById(R.id.textView3);
-        text4 = (TextView) findViewById(R.id.textView4);
-        text5 = (TextView) findViewById(R.id.textView5);
+        txtNationalID = (TextView) findViewById(R.id.textView1);
+        txtUserType = (TextView) findViewById(R.id.textView2);
+        txtUserName = (TextView) findViewById(R.id.textView3);
+        txtUserPass = (TextView) findViewById(R.id.textView4);
+        txtPhoneNo = (TextView) findViewById(R.id.textView5);
         SQLiteDatabase db = dbhandler.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM userlist",null);
+        cursor = db.rawQuery("SELECT * FROM userlist WHERE usertype = '" + TestingForStaffAddRegCust.selections + "'",null);
         cursor.moveToFirst();
-        if (cursor.getCount()>0)
-        {
-            cursor.moveToPosition(0);
-            text1.setText(cursor.getString(0).toString());
-            text2.setText(cursor.getString(1).toString());
-            text3.setText(cursor.getString(2).toString());
-            text4.setText(cursor.getString(3).toString());
-            text5.setText(cursor.getString(4).toString());
-        }
+        txtNationalID.setText(cursor.getString(0).toString());
+        txtUserType.setText(cursor.getString(1).toString());
+        txtUserName.setText(cursor.getString(2).toString());
+        txtUserPass.setText(cursor.getString(3).toString());
+        txtPhoneNo.setText(cursor.getString(4).toString());
+
         ton2 = (Button) findViewById(R.id.button1);
         ton2.setOnClickListener(new View.OnClickListener() {
 
@@ -48,12 +46,5 @@ public class TestingForViewStaff extends AppCompatActivity {
             }
         });
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
 
 }
