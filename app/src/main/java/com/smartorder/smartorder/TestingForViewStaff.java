@@ -14,7 +14,6 @@ public class TestingForViewStaff extends AppCompatActivity {
     DBHandler dbhandler;
     Button ton2;
     TextView txtNationalID, txtUserType, txtUserName, txtUserPass, txtPhoneNo;
-    String strNationalID, strUserType, strUserName, strUserPass, strPhoneNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,7 @@ public class TestingForViewStaff extends AppCompatActivity {
         txtUserPass = (TextView) findViewById(R.id.textView4);
         txtPhoneNo = (TextView) findViewById(R.id.textView5);
         SQLiteDatabase db = dbhandler.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM userlist WHERE usertype = '" + TestingForStaffAddRegCust.selections + "'",null);
+        cursor = db.rawQuery("SELECT * FROM userlist WHERE nationalid = '" + TestingForStaffAddRegCust.selections + "'",null);
         cursor.moveToFirst();
         txtNationalID.setText(cursor.getString(0).toString());
         txtUserType.setText(cursor.getString(1).toString());

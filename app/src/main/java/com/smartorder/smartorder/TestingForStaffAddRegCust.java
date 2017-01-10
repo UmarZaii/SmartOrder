@@ -58,10 +58,10 @@ public class TestingForStaffAddRegCust extends AppCompatActivity implements OnIt
         cursor.moveToFirst();
         for (int cc=0; cc < cursor.getCount(); cc++){
             cursor.moveToPosition(cc);
-            registercust[cc] = cursor.getString(1).toString();
+            registercust[cc] = cursor.getString(0).toString();
         }
         ListView01.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, registercust));
-        ((ArrayAdapter)ListView01.getAdapter()).notifyDataSetInvalidated();
+//        ((ArrayAdapter)ListView01.getAdapter()).notifyDataSetInvalidated();
     }
 
     @Override
@@ -69,26 +69,27 @@ public class TestingForStaffAddRegCust extends AppCompatActivity implements OnIt
 
         final String selection = registercust[position];
         this.selections = selection;
-        final CharSequence[] dialogitem = {"View Customer", "Update Customer", "Delete Customer"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(TestingForStaffAddRegCust.this);
-        builder.setTitle("Choose");
-        builder.setItems(dialogitem, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int item) {
-                switch(item){
-                    case 0 :
-                        Intent i = new Intent(getApplicationContext(), TestingForViewStaff.class);
-                        i.putExtra("nama", selection);
-                        startActivity(i);
-                        break;
-                    case 2 :
-                        SQLiteDatabase db = dbhandler.getWritableDatabase();
-                        db.execSQL("delete from userlist where usertype = '"+selection+"'");
-                        RefreshList();
-                        break;
-                }
-            }
-        });
-        builder.create().show();
+        startActivity(new Intent(this, TestingForViewStaff.class));
+//        final CharSequence[] dialogitem = {"View Customer", "Update Customer", "Delete Customer"};
+//        AlertDialog.Builder builder = new AlertDialog.Builder(TestingForStaffAddRegCust.this);
+//        builder.setTitle("Choose");
+//        builder.setItems(dialogitem, new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int item) {
+//                switch(item){
+//                    case 0 :
+//                        Intent i = new Intent(getApplicationContext(), TestingForViewStaff.class);
+//                        i.putExtra("nama", selection);
+//                        startActivity(i);
+//                        break;
+//                    case 2 :
+//                        SQLiteDatabase db = dbhandler.getWritableDatabase();
+//                        db.execSQL("delete from userlist where nationalid = '"+selection+"'");
+//                        RefreshList();
+//                        break;
+//                }
+//            }
+//        });
+//        builder.create().show();
 
     }
 

@@ -10,13 +10,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class BackgroundTask extends AsyncTask<String,OrderMenu,String> implements AdapterView.OnItemClickListener{
+public class BackgroundTask extends AsyncTask<String,OrderMenu,String> {
 
-    Context context;
+    public static Context context;
     DBHandler dbHandler;
     AdapterMenuList adapterMenuList;
     Activity activity;
     ListView menuList;
+
     BackgroundTask(Context context) {
 
         this.context = context;
@@ -49,12 +50,10 @@ public class BackgroundTask extends AsyncTask<String,OrderMenu,String> implement
         } else if (method.equals("disp_menu")) {
 
             menuList = (ListView)activity.findViewById(R.id.dispMenuList);
-//            menuList.setSelected(true);
             SQLiteDatabase db = dbHandler.getReadableDatabase();
             Cursor cursor = dbHandler.getMenuList(db);
             adapterMenuList = new AdapterMenuList(context,R.layout.fragment_row_menulist);
             String menuType, menuName, menuPrice, menuStatus;
-//            menuList.setOnItemClickListener();
             while(cursor.moveToNext()) {
                 menuType = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUTYPE));
                 menuName = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUNAME));
@@ -86,8 +85,4 @@ public class BackgroundTask extends AsyncTask<String,OrderMenu,String> implement
 
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-    }
 }
