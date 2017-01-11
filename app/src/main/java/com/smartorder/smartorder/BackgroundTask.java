@@ -16,7 +16,7 @@ public class BackgroundTask extends AsyncTask<String,OrderMenu,String> {
     DBHandler dbHandler;
     AdapterMenuList adapterMenuList;
     Activity activity;
-    ListView menuList;
+    public static ListView menuList;
 
     BackgroundTask(Context context) {
 
@@ -53,13 +53,13 @@ public class BackgroundTask extends AsyncTask<String,OrderMenu,String> {
             SQLiteDatabase db = dbHandler.getReadableDatabase();
             Cursor cursor = dbHandler.getMenuList(db);
             adapterMenuList = new AdapterMenuList(context,R.layout.fragment_row_menulist);
-            String menuType, menuName, menuPrice, menuStatus;
+            String strMenuType, strMenuName, strMenuPrice, strMenuStatus;
             while(cursor.moveToNext()) {
-                menuType = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUTYPE));
-                menuName = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUNAME));
-                menuPrice = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUPRICE));
-                menuStatus = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUSTATUS));
-                OrderMenu orderMenu = new OrderMenu(menuType, menuName, menuPrice, menuStatus);
+                strMenuType = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUTYPE));
+                strMenuName = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUNAME));
+                strMenuPrice = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUPRICE));
+                strMenuStatus = cursor.getString(cursor.getColumnIndex(DBHandler.COLUMN_MENUSTATUS));
+                OrderMenu orderMenu = new OrderMenu(strMenuType, strMenuName, strMenuPrice, strMenuStatus);
                 publishProgress(orderMenu);
             }
             return "disp_menu";

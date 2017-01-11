@@ -15,9 +15,9 @@ import android.widget.ListView;
 
 public class DisplayMenuList extends AppCompatActivity implements OnItemClickListener{
 
-    AdapterMenuList adapterMenuList;
+//    AdapterMenuList adapterMenuList;
     String[] dataMenuList;
-    ListView menuList;
+    ListView menuList = BackgroundTask.menuList;
     protected Cursor cursor;
     DBHandler dbhandler;
     public static String selection;
@@ -44,8 +44,6 @@ public class DisplayMenuList extends AppCompatActivity implements OnItemClickLis
             cursor.moveToPosition(cc);
             dataMenuList[cc] = cursor.getString(2).toString();
         }
-        menuList.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, dataMenuList));
-
         final String selection = dataMenuList[position];
         this.selection = selection;
         startActivity(new Intent(this, AdminViewMenuDetails.class));
