@@ -15,7 +15,6 @@ import android.widget.ListView;
 
 public class DisplayMenuList extends AppCompatActivity implements OnItemClickListener{
 
-//    AdapterMenuList adapterMenuList;
     String[] dataMenuList;
     ListView menuList = BackgroundTask.menuList;
     protected Cursor cursor;
