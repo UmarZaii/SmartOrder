@@ -24,18 +24,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:text="@string/view_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnViewMenuPage"
-        android:onClick="viewMenuPage"
-        android:textSize="16sp"
-        android:minWidth="0dip"
-        android:minHeight="0dip"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
     <Spinner
         android:id="@+id/spnMenuType"
         android:layout_width="90dp"
@@ -59,5 +47,26 @@
         android:layout_alignBottom="@+id/txtMenuType"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <!--<Button-->
+        <!--android:text="@string/view_menu"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/btnViewMenuPage"-->
+        <!--android:onClick="viewMenuPage"-->
+        <!--android:textSize="16sp"-->
+        <!--android:minWidth="0dip"-->
+        <!--android:minHeight="0dip"-->
+        <!--android:layout_above="@+id/btnAddMenuPage"-->
+        <!--android:layout_alignLeft="@+id/btnAddMenuPage"-->
+        <!--android:layout_alignStart="@+id/btnAddMenuPage" />-->
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dispMenuList"
+        android:layout_below="@+id/btnAddMenuPage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
 
 </RelativeLayout>
