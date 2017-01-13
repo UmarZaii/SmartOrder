@@ -12,7 +12,6 @@ public class AdminMenuAdd extends AppCompatActivity {
     EditText txtMenuName, txtMenuPrice, txtMenuStatus;
     DBHandler dbHandler;
 
-    //testcommite
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
