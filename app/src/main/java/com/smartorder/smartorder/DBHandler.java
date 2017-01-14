@@ -91,6 +91,17 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
+    public void updUserList(String nationnalID, String userType, String userName, String userPass, String phoneNo){
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "UPDATE " + TABLE_USERLIST + " SET `" +
+                COLUMN_NATIONALID + "`='" + nationnalID + "', `" +
+                COLUMN_USERTYPE + "`='" + userType + "', `" +
+                COLUMN_USERPASS + "`='" + userPass + "', `" +
+                COLUMN_PHONENO + "`='" + phoneNo + "' WHERE `" +
+                COLUMN_USERNAME + "`='" + userName + "';";
+        db.execSQL(query);
+    }
+
     public void deleteUserList(String nationalID){
         SQLiteDatabase db = getWritableDatabase();
         String query = "DELETE FROM " + TABLE_USERLIST + " WHERE " + COLUMN_NATIONALID + "=`" + nationalID + "`;";

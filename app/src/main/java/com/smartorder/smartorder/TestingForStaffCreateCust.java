@@ -1,5 +1,6 @@
 package com.smartorder.smartorder;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,11 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.smartorder.smartorder.R.id.txtMenuName;
+
 public class TestingForStaffCreateCust extends AppCompatActivity {
     protected Cursor cursor;
     DBHandler dbhandler;
     Button ton1, ton2;
     EditText txtNationalID, txtUserType, txtUserName, txtUserPass, txtPhoneNo;
+    String nationalID, userType, userName, userPass, phoneNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,24 @@ public class TestingForStaffCreateCust extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+    public void del(View view) {
+        String inputMenuname = txtNationalID.getText().toString();
+        dbhandler.deleteUserList(inputMenuname);
+        TestingForStaffAddRegCust.TFSAR.RefreshList();
+        finish();
+    }
+
+    public void upd(View view) {
+        nationalID = txtNationalID.getText().toString();
+        userType = txtUserType.getText().toString();
+        userName = txtUserName.getText().toString();
+        userPass = txtUserPass.getText().toString();
+        phoneNo = txtPhoneNo.getText().toString();
+        dbhandler.updUserList(nationalID, userType, userName, userPass, phoneNo);
+        TestingForStaffAddRegCust.TFSAR.RefreshList();
+        finish();
     }
 
 }
