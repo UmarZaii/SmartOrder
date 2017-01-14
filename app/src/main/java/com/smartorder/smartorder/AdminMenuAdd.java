@@ -39,6 +39,8 @@ public class AdminMenuAdd extends AppCompatActivity {
     public void deleteButtonClicked(View view) {
         String inputMenuname = txtMenuName.getText().toString();
         dbHandler.deleteOrderMenu(inputMenuname);
+
+        startActivity(new Intent(this, AdminMenuList.class));
     }
 
     public void updateButtonClicked(View view) {
@@ -46,7 +48,7 @@ public class AdminMenuAdd extends AppCompatActivity {
         menuName = txtMenuName.getText().toString();
         menuPrice = txtMenuPrice.getText().toString();
         menuStatus = txtMenuStatus.getText().toString();
-        dbHandler.updOrderMenu(menuName, menuPrice, menuStatus);
+        dbHandler.updOrderMenu(menuType, menuName, menuPrice, menuStatus);
 
         startActivity(new Intent(this, AdminMenuList.class));
     }

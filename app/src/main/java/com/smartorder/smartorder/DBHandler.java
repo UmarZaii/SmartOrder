@@ -81,18 +81,19 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void updOrderMenu(String menuName, String menuPrice, String menuStatus){
+    public void updOrderMenu(String menuType, String menuName, String menuPrice, String menuStatus){
         SQLiteDatabase db = getWritableDatabase();
-        String query = "UPDATE FROM " + TABLE_ORDERMENU + " SET " +
-                COLUMN_MENUPRICE + "=" + menuPrice + ", " +
-                COLUMN_MENUSTATUS + "=" + menuStatus + " WHERE " +
-                COLUMN_MENUNAME + "=\"" + menuName + "\";";
+        String query = "UPDATE " + TABLE_ORDERMENU + " SET `" +
+                COLUMN_MENUTYPE + "`='" + menuType + "', `" +
+                COLUMN_MENUPRICE + "`='" + menuPrice + "', `" +
+                COLUMN_MENUSTATUS + "`='" + menuStatus + "' WHERE `" +
+                COLUMN_MENUNAME + "`='" + menuName + "';";
         db.execSQL(query);
     }
 
     public void deleteUserList(String nationalID){
         SQLiteDatabase db = getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_USERLIST + " WHERE " + COLUMN_NATIONALID + "=\"" + nationalID + "\";";
+        String query = "DELETE FROM " + TABLE_USERLIST + " WHERE " + COLUMN_NATIONALID + "=`" + nationalID + "`;";
         db.execSQL(query);
     }
 
