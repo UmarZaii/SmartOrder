@@ -75,7 +75,6 @@ public class AdminMenuList extends AppCompatActivity implements OnItemClickListe
         Log.d("Selection", selection);
 
         startActivity(new Intent(this, AdminViewMenuDetails.class));
-
     }
 
     public void addMenuPage(View view) {

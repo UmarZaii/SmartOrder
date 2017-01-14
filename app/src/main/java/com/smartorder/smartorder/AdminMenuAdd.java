@@ -46,9 +46,7 @@ public class AdminMenuAdd extends AppCompatActivity {
         menuName = txtMenuName.getText().toString();
         menuPrice = txtMenuPrice.getText().toString();
         menuStatus = txtMenuStatus.getText().toString();
-
-        OrderMenu orderMenu = new OrderMenu(menuType, menuName, menuPrice, menuStatus);
-        dbHandler.updOrderMenu(orderMenu);
+        dbHandler.updOrderMenu(menuName, menuPrice, menuStatus);
 
         startActivity(new Intent(this, AdminMenuList.class));
     }
