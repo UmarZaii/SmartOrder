@@ -3,6 +3,7 @@ package com.smartorder.smartorder;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,10 +15,12 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnMenuTabClickListener;
 import android.util.Log;
 
 
-public class AdminMenuList extends AppCompatActivity implements OnItemClickListener {
+public class AdminMenuList extends AppCompatActivity implements OnItemClickListener, OnMenuTabClickListener {
 
 //    Spinner spnMenuType;
 //    ArrayAdapter<CharSequence> adpMenuType;
@@ -25,6 +28,7 @@ public class AdminMenuList extends AppCompatActivity implements OnItemClickListe
     ListView menuList = BackgroundTask.menuList;
     protected Cursor cursor;
     DBHandler dbhandler;
+    BottomBar btmBarAdmin;
     public static String selection;
 
     @Override
@@ -32,8 +36,12 @@ public class AdminMenuList extends AppCompatActivity implements OnItemClickListe
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_menulist);
+
+        btmBarAdmin = BottomBar.attach(this, savedInstanceState);
+        btmBarAdmin.setItemsFromMenu(R.menu.menu_admin, this);
         menuList = (ListView)findViewById(R.id.dispMenuList);
         menuList.setOnItemClickListener(AdminMenuList.this);
+
         BackgroundTask bgTask = new BackgroundTask(this);
         bgTask.execute("disp_menu");
 
@@ -56,8 +64,6 @@ public class AdminMenuList extends AppCompatActivity implements OnItemClickListe
 
     }
 
-
-
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -77,12 +83,42 @@ public class AdminMenuList extends AppCompatActivity implements OnItemClickListe
         startActivity(new Intent(this, AdminViewMenuDetails.class));
     }
 
+    @Override
+    public void onMenuTabSelected(@IdRes int menuItemId) {
+
+        if (menuItemId == R.id.btmBarHome){
+
+//            HomeFragment hf = new HomeFragment();
+//            getSupportFragmentManager().beginTransaction().replace(R.id.Frame,hf).commit();
+
+        } else if (menuItemId == R.id.btmBarMenu){
+
+            startActivity(new Intent(this, AdminMenuList.class));
+//            MenuFragment mf = new MenuFragment();
+//            getSupportFragmentManager().beginTransaction().replace(R.id.Frame,mf).commit();
+
+        } else if (menuItemId == R.id.btmBarUser){
+
+            startActivity(new Intent(this, TestingForStaffAddRegCust.class));
+//            UserFragment uf = new UserFragment();
+//            getSupportFragmentManager().beginTransaction().replace(R.id.Frame,uf).commit();
+
+        } else if (menuItemId == R.id.btmBarSetting){
+
+//            RegisterFragment rf = new RegisterFragment();
+//            getSupportFragmentManager().beginTransaction().replace(R.id.Frame,rf).commit();
+
+        }
+
+    }
+
+    @Override
+    public void onMenuTabReSelected(@IdRes int menuItemId) {
+
+    }
+
     public void addMenuPage(View view) {
         startActivity(new Intent(this, AdminMenuAdd.class));
     }
-
-//    public void viewMenuPage(View view) {
-//        startActivity(new Intent(this, DisplayMenuList.class));
-//    }
 
 }
