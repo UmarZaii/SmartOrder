@@ -22,8 +22,6 @@ import android.util.Log;
 
 public class AdminMenuList extends AppCompatActivity implements OnItemClickListener, OnMenuTabClickListener {
 
-//    Spinner spnMenuType;
-//    ArrayAdapter<CharSequence> adpMenuType;
     String[] dataMenuList;
     ListView menuList = BackgroundTask.menuList;
     protected Cursor cursor;
@@ -44,23 +42,6 @@ public class AdminMenuList extends AppCompatActivity implements OnItemClickListe
 
         BackgroundTask bgTask = new BackgroundTask(this);
         bgTask.execute("disp_menu");
-
-        //ComboBox Menu Type
-//        spnMenuType = (Spinner) findViewById(R.id.spnMenuType);
-//        adpMenuType = ArrayAdapter.createFromResource(this,R.array.menu_types,android.R.layout.simple_spinner_item);
-//        adpMenuType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spnMenuType.setAdapter(adpMenuType);
-//        spnMenuType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(AdminMenuList.this, parent.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
 
     }
 
@@ -88,25 +69,16 @@ public class AdminMenuList extends AppCompatActivity implements OnItemClickListe
 
         if (menuItemId == R.id.btmBarHome){
 
-//            HomeFragment hf = new HomeFragment();
-//            getSupportFragmentManager().beginTransaction().replace(R.id.Frame,hf).commit();
-
         } else if (menuItemId == R.id.btmBarMenu){
 
             startActivity(new Intent(this, AdminMenuList.class));
-//            MenuFragment mf = new MenuFragment();
-//            getSupportFragmentManager().beginTransaction().replace(R.id.Frame,mf).commit();
 
         } else if (menuItemId == R.id.btmBarUser){
 
-            startActivity(new Intent(this, TestingForStaffAddRegCust.class));
-//            UserFragment uf = new UserFragment();
-//            getSupportFragmentManager().beginTransaction().replace(R.id.Frame,uf).commit();
+            TestingForStaffAddRegCust uf = new TestingForStaffAddRegCust();
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_admin_menulist, uf).commit();
 
         } else if (menuItemId == R.id.btmBarSetting){
-
-//            RegisterFragment rf = new RegisterFragment();
-//            getSupportFragmentManager().beginTransaction().replace(R.id.Frame,rf).commit();
 
         }
 

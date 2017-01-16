@@ -28,8 +28,6 @@ public class AdminMenuAdd extends AppCompatActivity {
         menuPrice = txtMenuPrice.getText().toString();
         menuStatus = txtMenuStatus.getText().toString();
 
-//        OrderMenu orderMenu = new OrderMenu(menuType, menuName, menuPrice, menuStatus);
-//        dbHandler.addOrderMenu(orderMenu);
         BackgroundTask bgTask = new BackgroundTask(this);
         bgTask.execute("add_menu", menuType, menuName, menuPrice, menuStatus);
 
